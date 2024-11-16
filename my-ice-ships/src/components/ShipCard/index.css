@@ -1,0 +1,7 @@
+.ship-card {
+    background-color: #f8f9fa;
+}
+
+.ship-card .list-group-item {
+    background-color: #f8f9fa; /* Светло-серый цвет */
+}

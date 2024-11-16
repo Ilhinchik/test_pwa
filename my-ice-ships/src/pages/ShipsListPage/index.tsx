@@ -1,0 +1,87 @@
+import "./index.css";
+import {FC} from "react";
+import {IShipCatalogPageProps} from "./typing";
+import {Link} from "react-router-dom";
+
+import {Navbar} from "../../components/Navbar";
+import {Button, Container} from "react-bootstrap";
+import {ShipCard} from "../../components/ShipCard";
+import {useShipCatalogPage} from "./useShipListPage.tsx";
+import {IShipCardProps} from "../../components/ShipCard/typing.tsx";
+import cartImage from "/images/folder.png"
+import {Breadcrumbs} from "../../components/Breadcrumbs";
+
+export const ShipCatalogPage: FC<IShipCatalogPageProps> = () => {
+    const {
+        shipList,
+        installShipRequestId,
+        itemsInCart,
+        handleSearchShipClick,
+        handleSearchNameChange,
+    } = useShipCatalogPage();
+
+    return (
+        <>
+            <Navbar/>
+            <Container>
+                <Breadcrumbs
+                    endItem="Каталог"
+                />
+                <Container className="d-flex mt-4 mb-4 p-0">
+                    <div className="flex-grow-1">
+                        <input
+                            type="text"
+                            className="input form-control"
+                            onChange={handleSearchNameChange}
+                            placeholder="Найти"
+                            aria-label="Найти"
+                        />
+
+                    </div>
+                    <div className="px-3">
+                        <Button
+                            onClick={handleSearchShipClick}
+                            className="dark-blue-btn ml-3 mr-3"
+                        >
+                            Найти
+                        </Button>
+                    </div>
+
+                    <Link
+                        to={"/install_ship_request/" + installShipRequestId}
+                        className={installShipRequestId !== undefined && installShipRequestId !== null && installShipRequestId !== 0 ? "btn dark-blue-border cart-button" : "btn dark-blue-border cart-button non-clickable"}
+                        state={{from: installShipRequestId}}
+                    >
+                        {itemsInCart}
+                        <img src={cartImage} width="25" alt="cart"/>
+                    </Link>
+                </Container>
+
+                {shipList && !!shipList.length ? (
+                    <div className="row row-cols-1 row-cols-md-1
+                    row-cols-lg-1 g-4">
+                        {shipList.map((ship, index) => {
+                            const props: IShipCardProps = {
+                                id: ship.pk,
+                                title: ship.title,
+                                ice_class: ship.ice_class,
+                                length: ship.length,
+                                logoFilePath: ship.logo_file_path,
+                            };
+
+                            return (
+                                <div className="col">
+                                    <ShipCard key={index} {...props} />
+                                </div>
+                            );
+                        })}
+                    </div>
+                ) : (
+                    <Container className="d-flex justify-content-center mt-4 mb-5">
+                        <h2>Ничего не найдено</h2>
+                    </Container>
+                )}
+            </Container>
+        </>
+    );
+};
