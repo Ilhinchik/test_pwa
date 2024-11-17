@@ -2,14 +2,16 @@ import {IInstallShipRequestByIdResponse} from "../api/ship/typing.ts";
 
 export const installShipRequest: IInstallShipRequestByIdResponse = {
     pk: 0,
-    creation_datetime: "2024-10-20T15:07:21.219Z",
-    formation_datetime: "2024-10-20T15:07:21.219Z",
-    completion_datetime: "2024-10-20T15:07:21.219Z",
-    host: "123.43.23.53",
-    client: 0,
-    manager: 0,
-    total_installing_time_in_min: 2147483647,
-    status: "DRAFT",
+    status: 1,
+    date_created: "2024-10-20T15:07:21.219Z",
+    date_formation: "2024-10-20T15:07:21.219Z",
+    date_complete: "2024-10-20T15:07:21.219Z",
+    owner: 0,
+    moderator: 0,
+    date: "2024-10-21",
+    start_point: "Россия",
+    finish_point: "Норвегия",
+    result: true,
     ship_list: [
         // {
         //     ship: {

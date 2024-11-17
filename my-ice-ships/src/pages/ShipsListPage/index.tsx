@@ -48,7 +48,7 @@ export const ShipCatalogPage: FC<IShipCatalogPageProps> = () => {
                     </div>
 
                     <Link
-                        to={"/install_ship_request/" + installShipRequestId}
+                        to={"/icebreakers/" + installShipRequestId}
                         className={installShipRequestId !== undefined && installShipRequestId !== null && installShipRequestId !== 0 ? "btn dark-blue-border cart-button" : "btn dark-blue-border cart-button non-clickable"}
                         state={{from: installShipRequestId}}
                     >
@@ -63,10 +63,11 @@ export const ShipCatalogPage: FC<IShipCatalogPageProps> = () => {
                         {shipList.map((ship, index) => {
                             const props: IShipCardProps = {
                                 id: ship.pk,
-                                title: ship.title,
+                                ship_name: ship.ship_name,
                                 ice_class: ship.ice_class,
                                 length: ship.length,
-                                logoFilePath: ship.logo_file_path,
+                                image: ship.image,
+                                engine: ship.engine
                             };
 
                             return (

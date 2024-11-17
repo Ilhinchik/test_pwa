@@ -1,6 +1,6 @@
 export interface IShip {
     pk: number;
-    title: string;
+    ship_name: string;
     year: number;
     ice_class: string;
     length: number;
@@ -11,34 +11,36 @@ export interface IShip {
 }
 
 export interface IGetShipListResponse {
-    ship: IShip[];
-    install_ship_request_id: number;
-    items_in_cart: number;
+    ships: IShip[];
+    draft_icebreaker_id: number;
+    ships_count: number;
 }
 
 
 export interface ISoftDataInRequestItem {
     pk: number;
-    title: string;
-    price: number;
-    summary: string;
-    logo_file_path: string;
+    ship_name: string;
+    year: number;
+    ice_class: string;
+    image: string;
 }
 
 export interface IShipInRequestItem {
     ship: ISoftDataInRequestItem;
-    version: string;
+    order: number;
 }
 
 export interface IInstallShipRequestByIdResponse {
     pk: number;
-    creation_datetime: string;
-    formation_datetime: string;
-    completion_datetime: string;
-    host: string;
-    client: number;
-    manager: number;
-    total_installing_time_in_min: number;
-    status: string;
+    status: number;
+    date_created: string;
+    date_formation: string;
+    date_complete: string;
+    owner: number;
+    moderator : number;
+    date: string;
+    start_point: string;
+    finish_point: string;
+    result: boolean;
     ship_list: IShipInRequestItem[];
 }

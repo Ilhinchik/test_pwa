@@ -2,9 +2,6 @@ import "./index.css";
 import {FC} from "react";
 import {IBreadcrumbs} from "./typing.tsx";
 import {Link} from "react-router-dom";
-// import {IShipCardProps} from "../ShipCard/typing.tsx";
-// import {ShipCard} from "../ShipCard";
-// import {Container} from "react-bootstrap";
 
 export const Breadcrumbs: FC<IBreadcrumbs> = (props) => {
     const {

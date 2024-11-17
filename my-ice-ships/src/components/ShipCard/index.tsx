@@ -10,14 +10,14 @@ export const ShipCard: FC<IShipCardProps> = (ship: IShipCardProps) => {
             <div className="row">
             <div className="col-md-4"> 
                 <img
-                    src={ship.logoFilePath ? (ship.logoFilePath) : (unknownImage)}
+                    src={ship.image ? (ship.image) : (unknownImage)}
                     className="card-img-top ship-card-img"
-                    alt={ship.title}
+                    alt={ship.ship_name}
                 />
             </div>
             <div className="col-md-8">
                 <div className="card-body">
-                    <h5 className="card-title">{ship.title}</h5>
+                    <h5 className="card-title">{ship.ship_name}</h5>
 
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">
@@ -32,12 +32,12 @@ export const ShipCard: FC<IShipCardProps> = (ship: IShipCardProps) => {
                         </li>
                     </ul>
                     <Link
-                        to={"/ship/" + ship.id}
-                        id={ship.title}
+                        to={"/ships/" + ship.id}
+                        id={ship.ship_name} 
                         className="btn dark-blue-btn"
-                        state={{from: ship.title}}
+                        state={{from: ship.ship_name}}
                     >
-                        Узнать подробнее
+                        Подробнее
                     </Link>
                 </div>
             </div>

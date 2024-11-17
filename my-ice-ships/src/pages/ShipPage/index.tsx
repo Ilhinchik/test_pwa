@@ -31,7 +31,7 @@ export const ShipPage: FC<IShipPageProps> = () => {
         }
     }, [id]);
 
-    if (!shipData || !shipData.title) {
+    if (!shipData || !shipData.ship_name) {
         return (
             <>
                 <Navbar/>
@@ -50,21 +50,21 @@ export const ShipPage: FC<IShipPageProps> = () => {
                             link: "/ship_catalog"
                         }
                     ]}
-                    endItem={shipData?.title}
+                    endItem={shipData?.ship_name}
                 />
                 <div className="row mt-4">
                     <div className="col-7">
-                        <h2>{shipData?.title}</h2>
+                        <h2>{shipData?.ship_name}</h2>
                         <p className=""><strong>Год создания: </strong> {shipData?.year}</p>
                         <p className=""><strong>Ледовый класс:</strong> {shipData?.ice_class}
                         </p>
-                        <p className=""><strong>Длина:</strong> {shipData?.length} м. </p>
-                        <p className=""><strong>Двигатель:</strong> {shipData?.engine} м. </p>
+                        <p className=""><strong>Длина:</strong> {shipData?.length} м </p>
+                        <p className=""><strong>Двигатель:</strong> {shipData?.engine} </p>
                         <p className=""><strong>Описание:</strong> {shipData?.description}</p>
                     </div>
                     <div className="col-5">   
-                        <img src={shipData?.logo_file_path ? (shipData?.logo_file_path) : (unknownImage)}
-                             alt={shipData?.title}
+                        <img src={shipData?.image ? (shipData?.image) : (unknownImage)}
+                             alt={shipData?.ship_name}
                              width="300px"/>
                         
                     </div>

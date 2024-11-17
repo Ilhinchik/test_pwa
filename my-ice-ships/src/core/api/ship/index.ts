@@ -6,11 +6,11 @@ export const getShipList = async (searchTitle?: string) => {
     try {
         const response: IGetShipListResponse = await sendRequest({
             method: "GET",
-            path: "/ship",
-            params: searchTitle ? {ship_title: searchTitle} : undefined,
+            path: "/ships",
+            params: searchTitle ? {ship_name: searchTitle} : undefined,
         });
         return response;
-    } catch (error) {
+    } catch (error) {   
         console.error("Error fetching ship list:", error);
         throw error;
     }
@@ -20,7 +20,7 @@ export const getShipById = async (id: string) => {
     try {
         const response: IShip = await sendRequest({
             method: "GET",
-            path: `/ship/${id}`,
+            path: `/ships/${id}`,
         });
         return response;
     } catch (error) {
@@ -34,7 +34,7 @@ export const getInstallShipRequestById = async (id: string) => {
     try {
         const response: IInstallShipRequestByIdResponse = await sendRequest({
             method: "GET",
-            path: `/install_ship_requests/${id}`,
+            path: `/icebreakers/${id}`,
         });
         return response;
     } catch (error) {

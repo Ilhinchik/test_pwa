@@ -15,7 +15,7 @@ export const AppRoutes = (props: IGlobalProps) => {
             element: <ShipCatalogPage {...props} />,
         },
         {
-            path: "ship/:id",
+            path: "ships/:id",
             element: <ShipPage/>,
         },
     ];
