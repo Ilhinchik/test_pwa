@@ -1,5 +1,5 @@
 export interface IShip {
-    pk: number;
+    id: number;
     ship_name: string;
     year: number;
     ice_class: string;
@@ -18,7 +18,7 @@ export interface IGetShipListResponse {
 
 
 export interface ISoftDataInRequestItem {
-    pk: number;
+    id: number;
     ship_name: string;
     year: number;
     ice_class: string;
@@ -31,7 +31,7 @@ export interface IShipInRequestItem {
 }
 
 export interface IInstallShipRequestByIdResponse {
-    pk: number;
+    id: number;
     status: number;
     date_created: string;
     date_formation: string;

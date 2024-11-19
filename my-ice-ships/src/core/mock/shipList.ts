@@ -2,7 +2,7 @@ import {IShip} from "../api/ship/typing.ts";
 
 
 export const shipList: IShip[] = [
-    {'pk': 0, 
+    {'id': 0, 
         'ship_name': 'Танкер TBN0986', 
         'year': 2000, 
         'ice_class': '1D',
@@ -13,7 +13,7 @@ export const shipList: IShip[] = [
         'image': ''
         },
    
-       {'pk': 1,
+       {'id': 1,
         'ship_name': 'Крановый сухогруз TBN0973', 
         'year': 2005, 
         'ice_class': '1C',
@@ -24,7 +24,7 @@ export const shipList: IShip[] = [
         'image': ''
     },
    
-       {'pk': 2, 
+       {'id': 2, 
         'ship_name': 'Крановый контейнеровоз TBN0977', 
         'year': 2014, 
         'ice_class': '1D',
@@ -35,7 +35,7 @@ export const shipList: IShip[] = [
         'image': ''
     },
    
-       {'pk': 3, 
+       {'id': 3, 
         'ship_name': 'Танкер TBN0972', 
         'year': 2009, 
         'ice_class': '1C',
@@ -46,7 +46,7 @@ export const shipList: IShip[] = [
         'image': ''
     },
    
-       {'pk': 4, 
+       {'id': 4, 
         'ship_name': 'Многоцелевой твиндекер TBN0964', 
         'year': 2017, 
         'ice_class': '1D',

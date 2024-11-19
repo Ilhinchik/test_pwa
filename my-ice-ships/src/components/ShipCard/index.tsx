@@ -6,6 +6,8 @@ import {Link} from "react-router-dom";
 
 export const ShipCard: FC<IShipCardProps> = (ship: IShipCardProps) => {
     return (
+        <div className="row">
+        <div className="col-md-12 col-lg-10 offset-lg-1">
         <div className="card ship-card">
             <div className="row">
             <div className="col-md-4"> 
@@ -41,6 +43,8 @@ export const ShipCard: FC<IShipCardProps> = (ship: IShipCardProps) => {
                     </Link>
                 </div>
             </div>
+        </div>
+        </div>
         </div>
         </div>
     );

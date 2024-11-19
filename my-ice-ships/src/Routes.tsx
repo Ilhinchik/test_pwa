@@ -1,6 +1,6 @@
 import {RouteObject, useRoutes} from "react-router-dom";
 import {IGlobalProps} from "./App.typing";
-import {MainPage} from "./pages/HomePage";
+import {HomePage} from "./pages/HomePage";
 import {ShipCatalogPage} from "./pages/ShipsListPage";
 import {ShipPage} from "./pages/ShipPage";
 
@@ -8,10 +8,10 @@ export const AppRoutes = (props: IGlobalProps) => {
     const routes: RouteObject[] = [
         {
             path: "",
-            element: <MainPage {...props} />,
+            element: <HomePage {...props} />,
         },
         {
-            path: "ship_catalog",
+            path: "ships",
             element: <ShipCatalogPage {...props} />,
         },
         {

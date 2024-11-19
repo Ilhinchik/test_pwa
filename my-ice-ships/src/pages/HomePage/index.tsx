@@ -1,11 +1,11 @@
 import "./index.css";
 import {FC} from "react";
-import {IMainPageProps} from "./typing";
+import {IHomePageProps} from "./typing";
 
 import {Container} from "react-bootstrap";
 import {Navbar} from "../../components/Navbar";
 
-export const MainPage: FC<IMainPageProps> = () => {
+export const HomePage: FC<IHomePageProps> = () => {
     return (
         <>
             <Navbar/>

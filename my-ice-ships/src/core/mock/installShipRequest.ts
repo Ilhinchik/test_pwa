@@ -1,7 +1,7 @@
 import {IInstallShipRequestByIdResponse} from "../api/ship/typing.ts";
 
 export const installShipRequest: IInstallShipRequestByIdResponse = {
-    pk: 0,
+    id: 0,
     status: 1,
     date_created: "2024-10-20T15:07:21.219Z",
     date_formation: "2024-10-20T15:07:21.219Z",

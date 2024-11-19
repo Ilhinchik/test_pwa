@@ -58,11 +58,10 @@ export const ShipCatalogPage: FC<IShipCatalogPageProps> = () => {
                 </Container>
 
                 {shipList && !!shipList.length ? (
-                    <div className="row row-cols-1 row-cols-md-1
-                    row-cols-lg-1 g-4">
+                    <div className="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
                         {shipList.map((ship, index) => {
                             const props: IShipCardProps = {
-                                id: ship.pk,
+                                id: ship.id,
                                 ship_name: ship.ship_name,
                                 ice_class: ship.ice_class,
                                 length: ship.length,

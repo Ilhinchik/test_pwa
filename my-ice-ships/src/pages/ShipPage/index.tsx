@@ -24,7 +24,7 @@ export const ShipPage: FC<IShipPageProps> = () => {
                 })
                 .catch(() => {
                     const ship = SHIP_LIST_MOCK.find(
-                        (ship) => ship.pk === Number(id)
+                        (ship) => ship.id === Number(id)
                     );
                     setShipData(ship || null);
                 });
@@ -47,13 +47,19 @@ export const ShipPage: FC<IShipPageProps> = () => {
                     middleItems={[
                         {
                             name: "Каталог",
-                            link: "/ship_catalog"
+                            link: "/ships"
                         }
                     ]}
                     endItem={shipData?.ship_name}
                 />
-                <div className="row mt-4">
-                    <div className="col-7">
+                <div className=" row d-flex flex-row-reverse mt-4">
+                <div className="col-md-5">   
+                        <img src={shipData?.image ? (shipData?.image) : (unknownImage)}
+                             alt={shipData?.ship_name}
+                             width="300px"/>
+                        
+                    </div>
+                    <div className="col-md-7 mt-4 mt-md-0">
                         <h2>{shipData?.ship_name}</h2>
                         <p className=""><strong>Год создания: </strong> {shipData?.year}</p>
                         <p className=""><strong>Ледовый класс:</strong> {shipData?.ice_class}
@@ -62,15 +68,11 @@ export const ShipPage: FC<IShipPageProps> = () => {
                         <p className=""><strong>Двигатель:</strong> {shipData?.engine} </p>
                         <p className=""><strong>Описание:</strong> {shipData?.description}</p>
                     </div>
-                    <div className="col-5">   
-                        <img src={shipData?.image ? (shipData?.image) : (unknownImage)}
-                             alt={shipData?.ship_name}
-                             width="300px"/>
-                        
-                    </div>
                     
-                </div>
+                    
                 
+                
+                    </div>
             </Container>
         </>
     );
