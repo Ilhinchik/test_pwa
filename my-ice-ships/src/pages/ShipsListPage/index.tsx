@@ -14,7 +14,7 @@ import {Breadcrumbs} from "../../components/Breadcrumbs";
 export const ShipCatalogPage: FC<IShipCatalogPageProps> = () => {
     const {
         shipList,
-        installShipRequestId,
+        installShipIcebreakerId,
         itemsInCart,
         handleSearchShipClick,
         handleSearchNameChange,
@@ -48,9 +48,9 @@ export const ShipCatalogPage: FC<IShipCatalogPageProps> = () => {
                     </div>
 
                     <Link
-                        to={"/icebreakers/" + installShipRequestId}
-                        className={installShipRequestId !== undefined && installShipRequestId !== null && installShipRequestId !== 0 ? "btn dark-blue-border cart-button" : "btn dark-blue-border cart-button non-clickable"}
-                        state={{from: installShipRequestId}}
+                        to={"/icebreakers/" + installShipIcebreakerId}
+                        className={installShipIcebreakerId !== undefined && installShipIcebreakerId !== null && installShipIcebreakerId !== 0 ? "btn dark-blue-border cart-button" : "btn dark-blue-border cart-button non-clickable"}
+                        state={{from: installShipIcebreakerId}}
                     >
                         {itemsInCart}
                         <img src={cartImage} width="25" alt="cart"/>
@@ -58,7 +58,7 @@ export const ShipCatalogPage: FC<IShipCatalogPageProps> = () => {
                 </Container>
 
                 {shipList && !!shipList.length ? (
-                    <div className="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
+                    <div className="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4">
                         {shipList.map((ship, index) => {
                             const props: IShipCardProps = {
                                 id: ship.id,

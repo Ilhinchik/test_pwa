@@ -1,6 +1,6 @@
-import {IInstallShipRequestByIdResponse} from "../api/ship/typing.ts";
+import {IInstallShipIcebreakerByIdResponse} from "../api/ship/typing.ts";
 
-export const installShipRequest: IInstallShipRequestByIdResponse = {
+export const installShipIcebreaker: IInstallShipIcebreakerByIdResponse = {
     id: 0,
     status: 1,
     date_created: "2024-10-20T15:07:21.219Z",

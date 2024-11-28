@@ -7,23 +7,23 @@ import {Link} from "react-router-dom";
 export const ShipCard: FC<IShipCardProps> = (ship: IShipCardProps) => {
     return (
         <div className="row">
-        <div className="col-md-12 col-lg-10 offset-lg-1">
+        <div className="col-md-12 col-lg-12">
         <div className="card ship-card">
             <div className="row">
-            <div className="col-md-4"> 
+            <div className="col-md-5"> 
                 <img
                     src={ship.image ? (ship.image) : (unknownImage)}
                     className="card-img-top ship-card-img"
                     alt={ship.ship_name}
                 />
             </div>
-            <div className="col-md-8">
+            <div className="col-md-7">
                 <div className="card-body">
                     <h5 className="card-title">{ship.ship_name}</h5>
 
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">
-                            <strong>Длина:</strong> {ship.length}
+                            <strong>Длина:</strong> {ship.length} м
                             
                         </li>
                         <li className="list-group-item">

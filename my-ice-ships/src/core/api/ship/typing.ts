@@ -17,7 +17,7 @@ export interface IGetShipListResponse {
 }
 
 
-export interface ISoftDataInRequestItem {
+export interface IShipInIcebreakerItem {
     id: number;
     ship_name: string;
     year: number;
@@ -25,12 +25,12 @@ export interface ISoftDataInRequestItem {
     image: string;
 }
 
-export interface IShipInRequestItem {
-    ship: ISoftDataInRequestItem;
+export interface IShipInIcebreakerItem {
+    ship: IShipInIcebreakerItem;
     order: number;
 }
 
-export interface IInstallShipRequestByIdResponse {
+export interface IInstallShipIcebreakerByIdResponse {
     id: number;
     status: number;
     date_created: string;
@@ -42,5 +42,5 @@ export interface IInstallShipRequestByIdResponse {
     start_point: string;
     finish_point: string;
     result: boolean;
-    ship_list: IShipInRequestItem[];
+    ship_list: IShipInIcebreakerItem[];
 }

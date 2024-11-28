@@ -1,12 +1,12 @@
 import {sendRequest} from "../index.ts";
 
-import {IGetShipListResponse, IInstallShipRequestByIdResponse, IShip} from "./typing.ts";
+import {IGetShipListResponse, IInstallShipIcebreakerByIdResponse, IShip} from "./typing.ts";
 
 export const getShipList = async (searchTitle?: string) => {
     try {
         const response: IGetShipListResponse = await sendRequest({
             method: "GET",
-            path: "/ships",
+            path: "/ships/",
             params: searchTitle ? {ship_name: searchTitle} : undefined,
         });
         return response;
@@ -30,9 +30,9 @@ export const getShipById = async (id: string) => {
 };
 
 
-export const getInstallShipRequestById = async (id: string) => {
+export const getInstallShipIcebreakerById = async (id: string) => {
     try {
-        const response: IInstallShipRequestByIdResponse = await sendRequest({
+        const response: IInstallShipIcebreakerByIdResponse = await sendRequest({
             method: "GET",
             path: `/icebreakers/${id}`,
         });

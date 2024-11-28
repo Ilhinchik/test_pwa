@@ -8,7 +8,7 @@ export const Breadcrumbs: FC<IBreadcrumbs> = (props) => {
         endItem,
     } = props;
 
-    return (
+    return ( 
         <nav aria-label="breadcrumb" className="mt-4">
             <ol className="breadcrumb">
                 <li className="breadcrumb-item"><Link to={"/"} className="text-black">Главная</Link></li>
